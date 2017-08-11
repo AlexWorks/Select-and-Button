@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './custom-select.component.html',
   styleUrls: ['./custom-select.component.scss']
 })
+
 export class CustomSelectComponent implements OnInit {
 
   constructor() { }
