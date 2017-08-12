@@ -1,0 +1,68 @@
+$button-height: 44px;
+$button-padding: 5px;
+$button-color: white;
+
+* {
+  box-sizing: border-box;
+}
+
+.customizable-button {
+
+  &.button {
+    display: block;
+    width: max-content;
+    height: $button-height;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: $button-color;
+    color: #000;
+    padding: $button-padding 5%;
+    line-height:$button-height - $button-padding * 2;
+    text-align: center;
+    text-decoration: none;
+    font-family: Impact, sans-serif;
+    box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.3);
+
+    &:active{
+      box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.3) inset;
+    }
+  }
+
+  &.image {
+    height: $button-height - $button-padding * 2;
+    vertical-align: middle;
+  }
+
+  &.text {
+    margin-left: 5px;
+  }
+
+  &.text-input {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  &.image-input {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  &.container {
+    margin-top: 10px;
+    padding: 5px;
+    width: max-content;
+    font-family: Impact, sans-serif;
+    font-size: 24px;
+  }
+}
