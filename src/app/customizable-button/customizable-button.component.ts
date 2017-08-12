@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-customizable-button',
@@ -12,7 +12,7 @@ export class CustomizableButtonComponent implements OnInit {
   ngOnInit() {
   }
 
-  button_text = "Sample Text";
-  button_image = "https://image.flaticon.com/icons/svg/121/121105.svg";
+  @Input() text : string = "Sample Text";
+  @Input() image : string = "https://image.flaticon.com/icons/svg/121/121105.svg";
 
 }
