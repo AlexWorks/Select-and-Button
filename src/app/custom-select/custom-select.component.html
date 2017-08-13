@@ -1,3 +1,12 @@
-<p>
-  custom-select works!
-</p>
+<div class="custom-select" (mousedown) = "onMouseDown($event);">
+  <div class="custom-select__selected-item" (click) = "toggle();">
+    {{selectedOption}}
+  </div>
+  <ul class = "custom-select__item-list" *ngIf = "isShown">
+    <li class = "custom-select__item"
+        *ngFor = "let item of options"
+    (click) = "onSelect(item);">
+      {{item}}
+    </li>
+  </ul>
+</div>
