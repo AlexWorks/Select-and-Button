@@ -1,6 +1,9 @@
 <a class = "customizable-button button" href = "/">
-  <img src = "{{image}}" class = "customizable-button image">
-  <span class = "customizable-button text">{{text}}</span>
+  <ng-content select = ".customizable-button.image"></ng-content>
+  <ng-content select = ".customizable-button.text"></ng-content>
 </a>
+
+
+
 
 

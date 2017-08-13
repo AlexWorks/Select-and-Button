@@ -12,7 +12,4 @@ export class CustomizableButtonComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input() text : string = "Sample Text";
-  @Input() image : string = "https://image.flaticon.com/icons/svg/121/121105.svg";
-
 }

@@ -6,12 +6,12 @@ $button-color: white;
   box-sizing: border-box;
 }
 
-.customizable-button {
+ .customizable-button {
 
   &.button {
     display: block;
     width: max-content;
-    height: $button-height;
+   // height: $button-height;
     border-radius: 5px;
     border: 1px solid black;
     background: $button-color;
@@ -33,13 +33,17 @@ $button-color: white;
     }
   }
 
-  &.image {
+   :host /deep/ &.image {
     height: $button-height - $button-padding * 2;
     vertical-align: middle;
+    display: inline-block;
   }
 
-  &.text {
+   :host /deep/ &.text {
     margin-left: 10px;
+    display: inline-block
   }
 
 }
+
+
