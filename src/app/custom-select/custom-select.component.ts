@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'app-custom-select',
@@ -11,8 +11,9 @@ export class CustomSelectComponent implements OnInit {
 
   selectedOption: string;
   isShown = false;
+  selectedElement = null;
 
-  options: string[] = [
+  @Input() options: string[] = [
     'Taco',
     'Pizza',
     'Burger',
@@ -35,9 +36,10 @@ export class CustomSelectComponent implements OnInit {
     this.isShown = !this.isShown;
   }
 
-  onSelect(value: string): void {
+  onSelect(value: string, event): void {
     this.selectedOption = value;
     this.toggle();
+    return event.target.closest('.custom-select__item');
   }
 
   onMouseDown(event: any): void {

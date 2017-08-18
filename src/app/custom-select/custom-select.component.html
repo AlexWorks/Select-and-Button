@@ -5,8 +5,11 @@
   <ul class = "custom-select__item-list" *ngIf = "isShown">
     <li class = "custom-select__item"
         *ngFor = "let item of options"
-    (click) = "onSelect(item);">
+    (click) = "selectedElement = onSelect(item, $event);">
       {{item}}
     </li>
   </ul>
 </div>
+<div *ngIf = "selectedElement"
+     class = "selected-element"
+     [innerHtml] = "selectedElement.outerHTML"></div>
