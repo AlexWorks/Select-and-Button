@@ -11,7 +11,6 @@ export class CustomSelectComponent implements OnInit {
 
   selectedOption: string;
   isShown = false;
-  selectedElement = null;
 
   @Input() options: string[] = [
     'Taco',
@@ -19,6 +18,9 @@ export class CustomSelectComponent implements OnInit {
     'Burger',
     'Burrito'
   ];
+
+  selectedElements = [];
+
   constructor() { }
 
   ngOnInit() {
@@ -39,6 +41,7 @@ export class CustomSelectComponent implements OnInit {
   onSelect(value: string, event): void {
     this.selectedOption = value;
     this.toggle();
+    this.selectedElements.push(value);
     return event.target.closest('.custom-select__item');
   }
 

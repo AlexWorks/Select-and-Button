@@ -10,6 +10,9 @@
     </li>
   </ul>
 </div>
-<div *ngIf = "selectedElement"
-     class = "selected-element"
-     [innerHtml] = "selectedElement.outerHTML"></div>
+<div *ngIf = "selectedElements.length != 0"
+     class = "selected-element">
+  <li *ngFor = "let elem of selectedElements">
+    {{elem}}
+  </li>
+</div>
