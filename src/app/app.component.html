@@ -2,4 +2,16 @@
   <img class = "customizable-button image" src = "https://image.flaticon.com/icons/svg/121/121105.svg">
   <span class = "customizable-button text">Text</span>
 </app-customizable-button>
-<app-custom-select [options] = '["Vasia", "Petia", "Alex", "Benia"]'></app-custom-select>
+
+<app-custom-select (selectchange) = "handleSelectChange($event);"
+                   [options] = '["Vasia", "Petia", "Alex", "Benia"]'>
+</app-custom-select>
+
+<div class = "select-log">
+  <span class = "select-log__item">Previous values</span>
+  <ul class = "select-log__log" *ngIf = "selectLog.length != 0">
+    <li class = "select-log__log-item" *ngFor = "let item of selectLog">
+      {{item}}
+    </li>
+  </ul>
+</div>

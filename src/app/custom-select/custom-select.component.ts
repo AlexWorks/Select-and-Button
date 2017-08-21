@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Input } from '@angular/core';
+import { Component, OnInit, HostListener, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-custom-select',
@@ -19,7 +19,8 @@ export class CustomSelectComponent implements OnInit {
     'Burrito'
   ];
 
-  selectedElements = [];
+  @Output('selectchange')
+  change: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
@@ -41,7 +42,7 @@ export class CustomSelectComponent implements OnInit {
   onSelect(value: string, event): void {
     this.selectedOption = value;
     this.toggle();
-    this.selectedElements.push(value);
+    this.change.emit(this.selectedOption);
     return event.target.closest('.custom-select__item');
   }
 
